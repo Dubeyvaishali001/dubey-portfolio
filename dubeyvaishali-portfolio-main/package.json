@@ -1,0 +1,45 @@
+{
+  "homepage": "https://github.com/Dubeyvaishali001/dubey-portfolio.git",
+  "name": "your_app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@tsparticles/engine": "^3.5.0",
+    "@tsparticles/react": "^3.0.0",
+    "animejs": "^3.2.2",
+    "react": "^18.3.1",
+    "react-d3-cloud": "^1.0.6",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1",
+    "tslib": "^2.7.0",
+    "tsparticles": "^3.5.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "predeploy":"npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
+  }
+}
