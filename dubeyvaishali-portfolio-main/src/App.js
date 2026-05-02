@@ -9,8 +9,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import mobileAppImage from './Webapp.png';
 import OnlineVotingImage from './mobapp.jpg';
+import EmployeemngmntImg from './emp.png';
 import { createAutoScroll } from './autoScroll.js';
-import mypro from './asset/mypro.jpg';
+import mypro from './asset/mypro.png';
 
 
 import WordCloudComponent from "./WordCloudComponent";
@@ -145,6 +146,52 @@ const MainWebsite = ({ initialImagePosition, onTransitionComplete }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
       {
+  title: (
+    <div>
+      Employee Management System (Java Spring Boot){" "}
+      <a
+        href="https://github.com/Dubeyvaishali001/Employee-Management-System"
+        target="_blank"
+        style={{ textDecoration: "none", color: "blue" }}
+      >
+        <i>Link</i>
+      </a>
+    </div>
+  ),
+  image: EmployeemngmntImg,
+  content: (
+    <div>
+      <h5>Project Description</h5>
+      <p>
+        <strong>Description:</strong>
+        <br />
+        A backend-focused Employee Management System built using Java Spring Boot
+        to manage employee records, departments, and role-based operations.
+        Designed with RESTful APIs for efficient CRUD operations and database
+        integration.
+      </p>
+
+      <h5>Key Features</h5>
+      <ul>
+        <li>Create, update, delete, and fetch employee records.</li>
+        <li>Built REST APIs using Spring Boot for employee management operations.</li>
+        <li>Integrated MySQL database using Spring Data JPA and Hibernate.</li>
+        <li>Structured layered architecture with Controller, Service, and Repository.</li>
+        <li>Exception handling and input validation for robust backend operations.</li>
+      </ul>
+
+      <h5>Additional Features & Achievements</h5>
+      <ul>
+        <li>Implemented clean backend architecture following enterprise coding practices.</li>
+        <li>Tested APIs using Postman for request/response validation.</li>
+        <li>Used Maven for dependency management and project build lifecycle.</li>
+        <li>Designed scalable backend structure suitable for HR systems.</li>
+        <li>Improved understanding of Spring Boot, JPA, and REST API development.</li>
+      </ul>
+    </div>
+  )
+},
+      {
         title:(
           <div>
             Heart Attack Risk Prediction Using SHAP (Web App){" "}
@@ -202,6 +249,7 @@ A web application that predicts the likelihood of a heart attack based on user i
       </div>
     )
       },
+      
       {
         title: (
           <div>
@@ -300,43 +348,43 @@ A web application that predicts the likelihood of a heart attack based on user i
   };
 
   const wordsProgramming = [
-    { text: "Java", value: 100 },
-    { text: "C", value: 90 },
-    { text: "C++", value: 80 },
-    { text: "Python", value: 70 },
+    { text: "Java", value: 48 },
+    { text: "Python", value: 46 },
   ];
+
 
   const wordsDatabases = [
-    { text: "MySQL", value: 100 },
-    { text: "PostgreSQL", value: 80 },
-    { text: "MongoDB", value: 70 },
-    { text: "Firebase", value: 60 },
+    { text: "MySQL", value: 40 },
+    { text: "PostgreSQL", value: 30 },
+    { text: "MongoDB", value: 35 },
     { text: "Oracle", value: 50 },
   ];
+  const wordsBackend = [
+ { text: "SpringBoot", value: 32 },
+    { text: "REST", value: 35 },
+    { text: "Hibernate", value: 30 },
+  
+];
 
   const wordsWeb = [
-    { text: "HTML", value: 100 },
-    { text: "CSS", value: 90 },
-    { text: "React", value: 80 },
-    { text: "JavaScript", value: 70 },
-    { text: "TypeScript", value: 55 },
-    { text: "Node.js", value: 60 },
+    { text: "HTML", value: 40 },
+    { text: "CSS", value: 50 },
+    { text: "JavaScript", value: 38 },
+   
+
   ];
 
   const wordsDevTools = [
-    { text: "Docker", value: 100 },
-    { text: "Android Studio", value: 80 },
-    { text: "Git", value: 70 },
-    { text: "AWS", value: 80 },
-    { text: "PowerBI", value: 60 },
+    { text: "Docker", value: 38 },
+    { text: "Git", value: 40 },
+    { text: "AWS", value: 40 },
     { text: "VSCode", value: 50 },
   ];
 
   const wordsOS = [
-    { text: "Linux", value: 100 },
-    { text: "Windows", value: 80 },
-    { text: "Ubuntu", value: 60 },
-    { text: "CentOS", value: 50 },
+    { text: "Linux", value: 50 },
+    { text: "Windows", value: 34 },
+    { text: "Ubuntu", value: 28 },
   ];
 
   const contactInfoElement = ConRef.current?.querySelector('.contact-info'); // Using ref to access the DOM element
@@ -351,7 +399,7 @@ A web application that predicts the likelihood of a heart attack based on user i
   return (
     <div ref={containerRef} className="container">
       <header className="header">
-        <h1><i>VAISHALI</i> DUBEY</h1>
+        <h1>VAISHALI DUBEY</h1>
         <nav>
         <a href="#" onClick={() => handleGlowClick(projectsRef)} className="glow-link">
         PROJECTS
@@ -367,12 +415,12 @@ A web application that predicts the likelihood of a heart attack based on user i
       <div className="intro">
         <ParticalBg id="particles-section5" />
         <h2>Software Developer</h2>
-        <h2><i>Full-Stack Developer</i></h2>
+        <h2>Java Backend Developer</h2>
         <h2>Cloud Solutions Architect</h2>
       </div>
       
       <div className="profile-image-container">
-        <img ref={profileImageRef} src="myProfile1.png" alt="Profile" className="profile-image" />
+        <img ref={profileImageRef} src={mypro} alt="Profile" className="profile-image" />
         <ParticalBg id="particles-section7" />
       </div>
 
@@ -387,6 +435,10 @@ A web application that predicts the likelihood of a heart attack based on user i
               <div>
                 <h3>Databases</h3>
                 <WordCloudComponent words={wordsDatabases} />
+              </div>
+              <div>
+                <h3>Backend</h3>
+                <WordCloudComponent words={wordsBackend} />
               </div>
               <div>
                 <h3>Web Development</h3>
@@ -443,7 +495,7 @@ A web application that predicts the likelihood of a heart attack based on user i
         <a href="https://github.com/Dubeyvaishali001" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/vaishali-dubey-426957304/" target="_blank">LinkedIn</a>
         <a href="mailto:vaishalidubeyofficial@gmail.com" target="_blank">Email</a>
-        <a href="https://drive.google.com/file/d/1xadYfiGd009G1yAGZx4ucnsdDvAA-Eq-/view?usp=sharing" target="_blank">Resume</a>
+        <a href="https://drive.google.com/file/d/1HRHwLw4TG4GeTiZQy5RAuMU3YUUGWZw-/view?usp=sharing" target="_blank">Resume</a>
       </footer>
     </div>
   );
